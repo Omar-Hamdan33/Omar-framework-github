@@ -1,5 +1,5 @@
 gideon
-baka
+
 <x-layout>
 
     <x-slot:title>
