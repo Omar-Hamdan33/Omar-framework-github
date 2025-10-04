@@ -6,3 +6,12 @@
 <x-navlink href="/contact" :active="  request()->routeIs('contact') " type="none" > none </x-navlink>
 <h1>{{ $title ?? 'Default Title' }}</h1>
 {{ $slot }}
+<!-- @if ($errors->any())
+    <div style="color: red;">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif -->

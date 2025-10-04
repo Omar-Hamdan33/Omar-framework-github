@@ -7,6 +7,7 @@
             <img src="{{ $job->logo }}" alt="logo" style="width: 50px; height: 50px;" > <hr> </img>
             <h2><a href="/jobs/{{ $job->id }}">{{ $job->title }}</a></h2 >
             <a href="{{ $job->url }}">Apply Now</a>
+            <a href="/jobs/edit/{{ $job->id }}">Edit Job</a>
             <hr>
         </div>
        
