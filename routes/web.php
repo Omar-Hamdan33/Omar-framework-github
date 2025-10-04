@@ -24,16 +24,31 @@ Route::get('/contact', function () {
 
 
 Route::get('/jobs', function () {
-    return view( 'jobs', [
+    return view( 'job/index', [
         'name' => 'Job page',
         'jobs' => Jobsmodel::all()
     ]);
 });
 
+Route::get('/jobs/create', function () {
+    return view('job/create');
+});
+
 Route::get('/jobs/{id}', function ($id) {
 
 
-    return view('job', [
+    return view('job/show', [
         'job' => Jobsmodel::find($id)
     ]);
+});
+
+
+
+Route::post('/jobs', function () {
+    $job = Jobsmodel::create([
+        'title' => request('title'),
+        'logo' => request('logo'),
+        'url' => request('url')
+    ]);
+    return redirect('/jobs/' . $job->id);
 });

@@ -7,7 +7,7 @@ class JobsModel
 {
     public static function all(): array
     {
-        return DB::table('job')->get()->toArray();
+        return DB::table('job')->orderBy('id', 'desc')->get()->toArray();
     }
 
     public static function find($id)
@@ -19,5 +19,11 @@ class JobsModel
         'url' => ''
     ];
 }
+
+    public static function create($data)
+    {
+        $id = DB::table('job')->insertGetId($data);
+        return self::find($id);
+    }
 
 }
